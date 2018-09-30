@@ -35,6 +35,23 @@ module head() {
 }
 head();
 
+module tail() {
+  difference() {
+    intersection() {
+      translate([-75, 15, 0]) {
+        cylinder(5, r=80, center=true, $fn=720);
+      }
+      cylinder(6, r=70, center=true, $fn=720);
+    }
+    rotate([0, 0, 120]) {
+      translate([-8, 20, 0]) {
+        cylinder(6, r=48.5, center=true, $fn=720);
+      }
+    }
+  }
+}
+tail();
+
 module three_circles() {
   circumference(70);
 
