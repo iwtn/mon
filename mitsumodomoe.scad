@@ -6,6 +6,35 @@ module circumference(radius) {
   };
 }
 
+module circle(radius) {
+  cylinder(5, r=radius, center=true, $fn=720);
+}
+
+module head() {
+  union() {
+    translate([0, 35, 0]) {
+      cylinder(5, r=30, center=true, $fn=720);
+    }
+    difference() {
+      difference() {
+        translate([-6, 32, 0]) {
+          cylinder(5, r=37, center=true, $fn=720);
+        }
+
+        rotate([0, 0, 120]) {
+          translate([-8, 20, 0]) {
+            cylinder(6, r=48.5, center=true, $fn=720);
+          }
+        }
+      }
+      translate([30, 30, 0]) {
+        cylinder(6, r=20, center=true, $fn=720);
+      }
+    }
+  }
+}
+head();
+
 module three_circles() {
   circumference(70);
 
