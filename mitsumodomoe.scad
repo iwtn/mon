@@ -23,7 +23,7 @@ module head() {
 
         rotate([0, 0, 120]) {
           translate([-8, 20, 0]) {
-            cylinder(6, r=48.5, center=true, $fn=720);
+            cylinder(6, r=51.5, center=true, $fn=720);
           }
         }
       }
@@ -33,7 +33,6 @@ module head() {
     }
   }
 }
-head();
 
 module tail() {
   difference() {
@@ -45,37 +44,19 @@ module tail() {
     }
     rotate([0, 0, 120]) {
       translate([-8, 20, 0]) {
-        cylinder(6, r=48.5, center=true, $fn=720);
+        cylinder(6, r=51.5, center=true, $fn=720);
       }
     }
   }
 }
-tail();
 
-module three_circles() {
-  circumference(70);
-
-  translate([0, 35, 0]) {
-    circumference(30);
-  }
-
-  translate([-6, 32, 0]) {
-    circumference(37);
-  }
-
-  rotate([0, 0, 120]) {
-    translate([-8, 20, 0]) {
-      circumference(48.5);
-    }
-  }
-
-  translate([-75, 15, 0]) {
-    circumference(80);
-  }
-
-  translate([30, 30, 0]) {
-    circumference(20);
-  }
+module tomoe() {
+  head();
+  tail();
 }
 
-three_circles();
+for(z = [0, 120, 240]) {
+  rotate([0, 0, z]) {
+    tomoe();
+  }
+}
