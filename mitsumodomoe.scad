@@ -1,9 +1,11 @@
+include <lib.scad>
+
 module on_circle(radius) {
-  cylinder(5, r=radius, center=true, $fn=720);
+  circle(radius, 5);
 }
 
 module off_circle(radius) {
-  cylinder(6, r=radius, center=true, $fn=720);
+  circle(radius, 6);
 }
 
 module head() {
