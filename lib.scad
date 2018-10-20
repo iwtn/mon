@@ -1,11 +1,13 @@
+Fragments = 720;
+
 module circle(radius, thickness) {
-  cylinder(thickness, r=radius, center=true, $fn=720);
+  cylinder(thickness, r=radius, center=true, $fn=Fragments);
 }
 
 module circumference(radius, thickness) {
   difference() {
-    cylinder(thickness, r=radius, center=true, $fn=720);
-    cylinder(thickness + 1, r=radius - 1, center=true, $fn=720);
+    cylinder(thickness, r=radius, center=true, $fn=Fragments);
+    cylinder(thickness + 1, r=radius - 1, center=true, $fn=Fragments);
   }
 }
 
