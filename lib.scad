@@ -13,4 +13,4 @@ module circumference(radius) {
   }
 }
 
-function smooth_radius(x1, y1, r1, x2, y2) = sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2)) + r1;
+function smooth_radius(v1, r1, v2) = sqrt(pow(v1[0] - v2[0], 2) + pow(v1[1] - v2[1], 2)) + r1;
